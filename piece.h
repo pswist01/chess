@@ -1,7 +1,8 @@
-#include <iostream>
-using namespace std;
+#ifndef piece_h
+#define piece_h
 
-struct location {
+
+struct Location {
   int rank;
   char file;
 }
@@ -9,7 +10,7 @@ struct location {
 class Piece {
  public:
   void taken();
-  location getLocation();
+  Location getLocation();
   string getColor();
 
  private:
@@ -19,3 +20,5 @@ class Piece {
 
 
 }
+
+#endif
