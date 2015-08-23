@@ -6,6 +6,7 @@
 class Knight : Piece {
  public:
   Knight();
+  Knight(string color);
   ~Knight();
   bool validMove(Location location);
 }

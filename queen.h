@@ -6,6 +6,7 @@
 class Queen : Piece {
  public:
   Queen();
+  Queen(string color);
   ~Queen();
   bool validMove(Location location);
 }

@@ -6,6 +6,7 @@
 class Rook : Piece {
  public:
   Rook();
+  Rook(string color);
   ~Rook();
   bool validMove(Location location);
 }

@@ -6,6 +6,7 @@
 class Bishop : Piece {
  public:
   Bishop();
+  Bishop(string color);
   ~Bishop();
   bool validMove(Location location);
 }

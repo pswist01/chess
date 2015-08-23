@@ -6,6 +6,7 @@
 class King : Piece {
  public:
   King();
+  King(string color);
   ~King();
   bool validMove(Location location);
 }

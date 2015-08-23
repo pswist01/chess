@@ -6,6 +6,7 @@
 class Pawn : Piece {
  public:
   Pawn();
+  Pawn(string color);
   ~Pawn();
   bool validMove(Location location);
 }
