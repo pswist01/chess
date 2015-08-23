@@ -11,11 +11,8 @@ Board::Board()
   takenPieces[] = new Piece[piecesOnBoard];
   whitesTurn = true;
   players = 2;
-  board[] = new char*[boardLength];
-  for (int i = 0; i < boardLength; i++){
-    char tempArray[] = new char[boardHeight];
-    board[i] = tempArray;
-  }
+  tempArray[boardLength][boardHeight];
+  board = tempArray;
 }
 
 Board::~Board()
