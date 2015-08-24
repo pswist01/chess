@@ -9,5 +9,6 @@ class Queen : Piece {
   Queen(string color);
   ~Queen();
   bool validMove(Location location);
+  char display(){return 'Q';}
 }
 #endif

@@ -9,5 +9,6 @@ class Knight : Piece {
   Knight(string color);
   ~Knight();
   bool validMove(Location location);
+  char display(){return 'N';}
 }
 #endif

@@ -9,6 +9,7 @@ class Pawn : Piece {
   Pawn(string color);
   ~Pawn();
   bool validMove(Location location);
+  char display(){return 'P';}
 }
 
 #endif

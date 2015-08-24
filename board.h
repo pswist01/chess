@@ -16,6 +16,6 @@ class Board {
   Piece takenPieces[];
   bool whitesTurn;
   int players;
-  char board[][];
+  Piece board[][];
 }
 #endif

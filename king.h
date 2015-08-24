@@ -9,5 +9,6 @@ class King : Piece {
   King(string color);
   ~King();
   bool validMove(Location location);
+  char display(){return 'K';}
 }
 #endif

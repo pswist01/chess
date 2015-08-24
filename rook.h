@@ -9,5 +9,7 @@ class Rook : Piece {
   Rook(string color);
   ~Rook();
   bool validMove(Location location);
+  char display(){return 'R';}
 }
+
 #endif

@@ -9,5 +9,6 @@ class Bishop : Piece {
   Bishop(string color);
   ~Bishop();
   bool validMove(Location location);
+  char display(){return 'B';}
 }
 #endif
