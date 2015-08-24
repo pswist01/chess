@@ -16,6 +16,8 @@ const int BOARD_LENGTH = 8;
 const int PIECES_ON_BOARD = 32;
 const int NUM_PAWNS = 8;
 const int TEAM_PIECES = 16;
+const string WHITE = "white";
+const string BLACK = "black";
 
 Board::Board()
 {
@@ -60,28 +62,28 @@ void Board::reset()
   }
   
   //white
-  activePieces[0] = King(white);
-  activePieces[1] = Queen(white);
-  activePieces[2] = Bishop(white);
-  activePieces[3] = Bishop(white);
-  activePieces[4] = Knight(white);
-  activePieces[5] = Knight(white);
-  activePieces[6] = Rook(white);
-  activePieces[7] = Rook(white);
+  activePieces[0] = King(WHITE);
+  activePieces[1] = Queen(WHITE);
+  activePieces[2] = Bishop(WHITE);
+  activePieces[3] = Bishop(WHITE);
+  activePieces[4] = Knight(WHITE);
+  activePieces[5] = Knight(WHITE);
+  activePieces[6] = Rook(WHITE);
+  activePieces[7] = Rook(WHITE);
   for (int i = 0; i < NUM_PAWNS; i++){
-    activePieces[8 + i] = Pawn(white);
+    activePieces[8 + i] = Pawn(WHITE);
   }
   //black
-  activePieces[TEAM_PIECES + 0] = King(black);
-  activePieces[TEAM_PIECES + 1] = Queen(black);
-  activePieces[TEAM_PIECES + 2] = Bishop(black);
-  activePieces[TEAM_PIECES + 3] = Bishop(black);
-  activePieces[TEAM_PIECES + 4] = Knight(black);
-  activePieces[TEAM_PIECES + 5] = Knight(black);
-  activePieces[TEAM_PIECES + 6] = Rook(black);
-  activePieces[TEAM_PIECES + 7] = Rook(black);
+  activePieces[TEAM_PIECES + 0] = King(BLACK);
+  activePieces[TEAM_PIECES + 1] = Queen(BLACK);
+  activePieces[TEAM_PIECES + 2] = Bishop(BLACK);
+  activePieces[TEAM_PIECES + 3] = Bishop(BLACK);
+  activePieces[TEAM_PIECES + 4] = Knight(BLACK);
+  activePieces[TEAM_PIECES + 5] = Knight(BLACK);
+  activePieces[TEAM_PIECES + 6] = Rook(BLACK);
+  activePieces[TEAM_PIECES + 7] = Rook(BLACK);
   for (int i = 0; i < NUM_PAWNS; i++){
-    activePieces[TEAM_PIECES + 8 + i] = Pawn(black);
+    activePieces[TEAM_PIECES + 8 + i] = Pawn(BLACK);
   }
 
   //setup white
