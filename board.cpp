@@ -16,25 +16,28 @@ const int BOARD_LENGTH = 8;
 const int PIECES_ON_BOARD = 32;
 const int NUM_PAWNS = 8;
 const int TEAM_PIECES = 16;
+const int DISPLAY_WIDTH = 18;
+const int DISPLAY_HEIGHT = 17;
 const string WHITE = "white";
 const string BLACK = "black";
+
 
 Board::Board()
 {
   activePieces[PIECES_ON_BOARD];
   for (int i = 0; i < PIECES_ON_BOARD; i++){
-    activePieces[i] = null;
+    activePieces[i] = NULL;
   }
   takenPieces[PIECES_ON_BOARD];
   for (int i = 0; i < PIECES_ON_BOARD; i++){
-    takenPieces[i] = null;
+    takenPieces[i] = NULL;
   }
   whitesTurn = true;
   players = 2;
   board[BOARD_LENGTH][BOARD_HEIGHT];
   for (int i = 0; i < BOARD_LENGTH; i++){
       for (int j = 0; j < BOARD_HEIGHT; j++){
-	board[i][j] = null;
+	board[i][j] = NULL;
       }
   }
 }
@@ -49,15 +52,15 @@ void Board::reset()
   //clear everything
   activePieces[PIECES_ON_BOARD];
   for (int i = 0; i < PIECES_ON_BOARD; i++){
-    activePieces[i] = null;
+    activePieces[i] = NULL;
   }
   takenPieces[PIECES_ON_BOARD];
   for (int i = 0; i < PIECES_ON_BOARD; i++){
-    takenPieces[i] = null;
+    takenPieces[i] = NULL;
   }
   for (int i = 0; i < BOARD_LENGTH; i++){
       for (int j = 0; j < BOARD_HEIGHT; j++){
-	board[i][j] = null;
+	board[i][j] = NULL;
       }
   }
   
@@ -116,7 +119,25 @@ void Board::reset()
 
 void Board::display()
 {
-
+  char displayArray[DISPLAY_WIDTH][DISPLAY_HEIGHT];
+  for (int i = 0; i < DISPLAY_WIDTH; i++){
+    for (int j = 0; j < DISPLAY_HEIGHT; j++){
+      if (i == (DISPLAY_WIDTH - 1)){
+	displayArray[i][j] = '/n';
+      } else if (j % 2 == 0){
+	displayArray[i][j] = '-';
+      } else if (i % == 0){
+	displayArray[i][j] = '|';
+      } else {
+	if (board[i/2][j/2] == NULL){
+	  displayArray[i][j] = ' '; 
+	} else {
+	  displayArray[i][j] = board[i/2][j/2].display();
+	}
+      }
+      cout<< displayArray[i][j];
+    }
+  }
 }
 
 void Board::move(Piece piece, Location location)
