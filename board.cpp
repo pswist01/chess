@@ -40,6 +40,7 @@ Board::Board()
 	board[i][j] = NULL;
       }
   }
+  displayArray = NULL;
 }
 
 Board::~Board()
@@ -119,24 +120,39 @@ void Board::reset()
 
 void Board::display()
 {
-  char displayArray[DISPLAY_WIDTH][DISPLAY_HEIGHT];
-  for (int i = 0; i < DISPLAY_WIDTH; i++){
-    for (int j = 0; j < DISPLAY_HEIGHT; j++){
-      if (i == (DISPLAY_WIDTH - 1)){
-	displayArray[i][j] = '/n';
-      } else if (j % 2 == 0){
-	displayArray[i][j] = '-';
-      } else if (i % == 0){
-	displayArray[i][j] = '|';
-      } else {
-	if (board[i/2][j/2] == NULL){
-	  displayArray[i][j] = ' '; 
+  if (displayArray == null){
+    displayArray[DISPLAY_WIDTH][DISPLAY_HEIGHT];
+    for (int i = 0; i < DISPLAY_WIDTH; i++){
+      for (int j = 0; j < DISPLAY_HEIGHT; j++){
+	if (i == (DISPLAY_WIDTH - 1)){
+	  displayArray[i][j] = '/n';
+	} else if (j % 2 == 0){
+	  displayArray[i][j] = '-';
+	} else if (i % == 0){
+	  displayArray[i][j] = '|';
 	} else {
-	  displayArray[i][j] = board[i/2][j/2].display();
+	  if (board[i/2][j/2] == NULL){
+	    displayArray[i][j] = ' '; 
+	  } else {
+	    displayArray[i][j] = board[i/2][j/2].display();
+	  }
 	}
+	cout << displayArray[i][j];
       }
-      cout<< displayArray[i][j];
     }
+  } else {
+    for (int i = 0; i < DISPLAY_WIDTH; i++){
+      for (int j = 0; j < DISPLAY_HEIGHT; j++){
+	if(i % 2 == 1 && j % 2 == 1 && i != (DISPLAY_WIDTH - 1)){
+	  if (board[i/2][j/2] == NULL){
+	    displayArray[i][j] = ' '; 
+	  } else {
+	    displayArray[i][j] = board[i/2][j/2].display();
+	  }
+	}
+	cout << displayArray[i][j];
+      }
+    }    
   }
 }
 
