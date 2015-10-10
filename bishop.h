@@ -3,12 +3,13 @@
 
 #include "piece.h"
 
-class Bishop : Piece {
+class Bishop : public Piece {
  public:
-  Bishop();
-  Bishop(string color);
-  ~Bishop();
-  bool validMove(Location location);
-  char display(){return 'B';}
-}
+  Bishop() { }
+ Bishop(string _color) : Piece(_color) { }
+  ~Bishop() { }
+  bool validMove(Location location) { return false; }
+  string display(){return color+"B";}
+};
+
 #endif

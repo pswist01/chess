@@ -3,12 +3,13 @@
 
 #include "piece.h"
 
-class Knight : Piece {
+class Knight : public Piece {
  public:
-  Knight();
-  Knight(string color);
-  ~Knight();
-  bool validMove(Location location);
-  char display(){return 'N';}
-}
+  Knight() { }
+ Knight(string _color) : Piece(_color) { }
+  ~Knight() { }
+  bool validMove(Location location) { return false; }
+  string display(){return color+"N";}
+};
+
 #endif

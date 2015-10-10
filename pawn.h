@@ -3,13 +3,13 @@
 
 #include "piece.h"
 
-class Pawn : Piece {
+class Pawn : public Piece {
  public:
-  Pawn();
-  Pawn(string color);
-  ~Pawn();
-  bool validMove(Location location);
-  char display(){return 'P';}
-}
+  Pawn() { }
+ Pawn(string _color) : Piece(_color) { }
+  ~Pawn() { }
+  bool validMove(Location location) { return false; }
+  string display(){return color+'P';}
+};
 
 #endif
