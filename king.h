@@ -5,11 +5,14 @@
 
 class King : public Piece {
  public:
-  King() { }
- King(string _color) : Piece(_color) { }
-  ~King() { }
-  bool validMove(Location location) { return false; }
-  string display(){return color + "K";}
+  King();
+  King(const string &_color, const Location &_location);
+  ~King();
+  bool validMove(const Location &_location);
+  string display();
+
+ private:
+  bool hasMoved;
 };
 
 #endif

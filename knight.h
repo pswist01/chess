@@ -5,11 +5,11 @@
 
 class Knight : public Piece {
  public:
-  Knight() { }
- Knight(string _color) : Piece(_color) { }
-  ~Knight() { }
-  bool validMove(Location location) { return false; }
-  string display(){return color+"N";}
+  Knight();
+  Knight(const string &_color, const Location &_location);
+  ~Knight();
+  bool validMove(const Location &_location);
+  string display();
 };
 
 #endif

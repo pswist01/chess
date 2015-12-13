@@ -5,11 +5,11 @@
 
 class Bishop : public Piece {
  public:
-  Bishop() { }
- Bishop(string _color) : Piece(_color) { }
-  ~Bishop() { }
-  bool validMove(Location location) { return false; }
-  string display(){return color+"B";}
+  Bishop();
+  Bishop(const string &_color, const Location &_location);
+  ~Bishop();
+  bool validMove(const Location &_location);
+  string display();
 };
 
 #endif

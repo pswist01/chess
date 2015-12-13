@@ -5,11 +5,11 @@
 
 class Rook : public Piece {
  public:
-  Rook() { }
- Rook(string _color) : Piece(_color) { }
-  ~Rook() { }
-  bool validMove(Location location) { return false; }
-  string display(){return color+"R";}
+  Rook();
+  Rook(const string &_color, const Location &_location);
+  ~Rook();
+  bool validMove(const Location &_location);
+  string display();
 };
 
 #endif

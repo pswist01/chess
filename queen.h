@@ -5,11 +5,11 @@
 
 class Queen : public Piece {
  public:
-  Queen() { }
- Queen(string _color) : Piece(_color) { }
-  ~Queen() { }
-  bool validMove(Location location) { return false; }
-  string display(){return color+"Q";}
+  Queen();
+  Queen(const string &_color, const Location &_location);
+  ~Queen();
+  bool validMove(const Location &_location);
+  string display();
 };
 
 #endif

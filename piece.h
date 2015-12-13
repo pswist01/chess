@@ -8,29 +8,32 @@ const string WHITE = "W";
 const string BLACK = "B";
 const string EMPTY = " ";
 
-struct Location {
+class Location {
+ public:
+  Location(int x, int y) { file = x; rank = y; }
+
+  int file;
   int rank;
-  char file;
 };
 
 class Piece {
  public:
-  Piece() { color = EMPTY; }
-  Piece(string _color) { color = _color; }
+  Piece();
+  Piece(const string &_color, const Location &_location);
 
   void taken();
-  Location getLocation();
   string getColor();
+  Location getLocation();
 
   // subclass must define these
-  virtual string display() { return "  "; }
-  virtual bool validMove(Location location) { return false; }
+  virtual string display();
+  virtual bool validMove(const Location &_location);
 
  protected:
   bool active;
   string color;
   int importance;
-
+  Location location; // Each piece knows its location
 
 };
 

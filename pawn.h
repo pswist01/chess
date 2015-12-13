@@ -5,11 +5,11 @@
 
 class Pawn : public Piece {
  public:
-  Pawn() { }
- Pawn(string _color) : Piece(_color) { }
-  ~Pawn() { }
-  bool validMove(Location location) { return false; }
-  string display(){return color+'P';}
+  Pawn();
+  Pawn(const string &_color, const Location &_location);
+  ~Pawn();
+  bool validMove(const Location &_location);
+  string display();
 };
 
 #endif
