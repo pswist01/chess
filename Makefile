@@ -2,7 +2,7 @@
 all: chess
 
 clean:
-	rm -f *.o chess
+	rm -f *.o chess *~
 
 chess: board.o bishop.o king.o knight.o pawn.o piece.o queen.o rook.o chess.o
 	g++ -g -o chess board.o bishop.o king.o knight.o pawn.o piece.o \
